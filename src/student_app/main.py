@@ -1,6 +1,7 @@
 from student_app.logger import logger
 from student_app.utils.validation import validate_name, validate_marks
-from student_app.services.calculator import calculate_grade
+from student_app.services.calculator import calculate_grade, calculate_status
+
 
 
 def main():
@@ -26,6 +27,8 @@ def main():
         return
 
     grade = calculate_grade(marks)
+    status = calculate_status(marks)
+
 
     print()
     print("Student Report")
@@ -33,6 +36,8 @@ def main():
     print(f"Name: {name}")
     print(f"Marks: {marks}")
     print(f"Grade: {grade}")
+    print(f"Status: {status}")
+
 
 
 if __name__ == "__main__":
